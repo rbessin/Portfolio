@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="flex space-x-12 max-w-6xl mx-auto px-6 pt-24 mb-16"
+      className="flex space-x-12 max-w-6xl mx-auto px-6 pt-24 pb-12"
     >
       <div>
         <span className="text-xs font-mono uppercase tracking-widest text-accent mb-4 block">
