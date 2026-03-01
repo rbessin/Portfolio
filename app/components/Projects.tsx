@@ -26,7 +26,12 @@ const projects = [
     name: "CurbYourCarbon",
     description:
       "A browser extension that tracks the carbon footprint of your web browsing using real data from the Performance API. Calculates emissions from network transfer and device energy consumption using research-backed formulas and regional grid carbon intensity.",
-    tags: ["Chrome Extension", "JavaScript", "Performance API", "ElectricityMaps API"],
+    tags: [
+      "Chrome Extension",
+      "JavaScript",
+      "Performance API",
+      "ElectricityMaps API",
+    ],
     github: "https://github.com/rbessin/CurbYourCarbon",
     live: null,
     status: "In Progress",
@@ -46,12 +51,12 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-6 pt-12 pb-24">
+    <section id="projects" className="max-w-6xl mx-auto px-6 py-10 scroll-mt-16">
       <span className="text-xs font-mono uppercase tracking-widest text-accent mb-4 block">
         Projects
       </span>
       <h2 className="text-3xl font-bold text-foreground mb-12">
-        Software I've Built
+        Software I&apos;ve Built
       </h2>
 
       <div className="grid grid-cols-2 gap-6">

@@ -1,6 +1,7 @@
 import Navigation from "./components/Navigation";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Experiences from "./components/Experience";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="pt-16">
         <About />
         <Projects />
+        <Experiences />
       </div>
     </main>
   );
