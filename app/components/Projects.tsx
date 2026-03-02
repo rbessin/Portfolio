@@ -52,12 +52,7 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="max-w-6xl mx-auto px-6 py-10 scroll-mt-16">
-      <span className="text-xs font-mono uppercase tracking-widest text-accent mb-4 block">
-        Projects
-      </span>
-      <h2 className="text-3xl font-bold text-foreground mb-12">
-        Software I&apos;ve Built
-      </h2>
+      <h2 className="text-4xl font-bold text-accent mb-8">Projects</h2>
 
       <div className="grid grid-cols-2 gap-6">
         {projects.map((project) => (

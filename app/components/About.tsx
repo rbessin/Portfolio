@@ -8,12 +8,7 @@ export default function About() {
       className="flex space-x-12 max-w-6xl mx-auto px-6 pt-20 pb-10 scroll-mt-16"
     >
       <div>
-        <span className="text-xs font-mono uppercase tracking-widest text-accent mb-4 block">
-          About
-        </span>
-        <h1 className="text-3xl font-bold text-foreground mb-6">
-          CS Student, Outdoor Enthusiast, and Avid Traveler
-        </h1>
+        <h1 className="text-4xl font-bold text-accent mb-6">About</h1>
         <div className="space-y-4 text-muted leading-relaxed">
           <p>
             I&apos;m Raphael, a Computer Science student in the Honors College

@@ -50,12 +50,7 @@ export default function Experience() {
       id="experience"
       className="max-w-6xl mx-auto px-6 py-10 scroll-mt-16"
     >
-      <span className="text-xs font-mono uppercase tracking-widest text-accent mb-4 block">
-        Experience
-      </span>
-      <h2 className="text-3xl font-bold text-foreground mb-8">
-        Where I&apos;ve Worked
-      </h2>
+      <h2 className="text-4xl font-bold text-accent mb-8">Experience</h2>
 
       <div className="flex flex-col gap-4">
         {experiences.map((job) => (

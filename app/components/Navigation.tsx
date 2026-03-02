@@ -36,7 +36,7 @@ export default function Navigation() {
       </a>
 
       <ul className="flex space-x-6 text-sm font-medium">
-        {["About", "Projects", "Experience"].map((item) => (
+        {["About", "Skills", "Projects", "Experience"].map((item) => (
           <li key={item}>
             <a
               href={`#${item.toLowerCase()}`}
