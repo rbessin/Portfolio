@@ -31,7 +31,7 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 w-full h-16 flex items-center justify-between px-6 bg-surface border-b border-border text-foreground">
-      <div className="text-lg font-bold tracking-tight">Raphael Bessin</div>
+      <div className="text-lg font-bold tracking-tight">Raphaël Bessin</div>
 
       <ul className="flex space-x-6 text-sm font-medium">
         {["About", "Skills", "Projects", "Experience"].map((item) => (

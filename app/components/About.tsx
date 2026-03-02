@@ -11,7 +11,7 @@ export default function About() {
         <h1 className="text-4xl font-bold text-accent mb-6">About</h1>
         <div className="space-y-4 text-muted leading-relaxed">
           <p>
-            I&apos;m Raphael, a Computer Science student in the{" "}
+            I&apos;m Raphaël, a Computer Science student in the{" "}
             <strong className="text-foreground">Honors College</strong> at{" "}
             <a
               href="https://northeastern.edu"
