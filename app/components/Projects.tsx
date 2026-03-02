@@ -1,11 +1,29 @@
 import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
+import { ReactNode } from "react";
 
-const projects = [
+const projects: {
+  name: string;
+  description: ReactNode;
+  tags: string[];
+  github: string | null;
+  live: string | null;
+  status: string;
+  image: string;
+}[] = [
   {
     name: "Signal Relay",
-    description:
-      "An interactive digital logic circuit simulator built in Godot. Users can design and visualize circuits with custom components, making it an educational tool for understanding digital logic.",
+    description: (
+      <>
+        An interactive{" "}
+        <strong className="text-foreground">
+          digital logic circuit simulator
+        </strong>{" "}
+        built in Godot. Users can design and visualize circuits with{" "}
+        <strong className="text-foreground">custom components</strong>, making
+        it an educational tool for understanding digital logic.
+      </>
+    ),
     tags: ["Godot", "GDScript", "Digital Logic"],
     github: "https://github.com/rbessin/signal-relay",
     live: null,
@@ -14,8 +32,18 @@ const projects = [
   },
   {
     name: "Stride Editor",
-    description:
-      "A feature-rich text editor built with Next.js and Quill.js featuring real-time AI-powered predictive text using n-gram language models trained on Project Gutenberg data. Includes rich text editing, KaTeX math support, and local file management.",
+    description: (
+      <>
+        A feature-rich <strong className="text-foreground">text editor</strong>{" "}
+        featuring real-time{" "}
+        <strong className="text-foreground">AI-powered predictive text</strong>{" "}
+        using{" "}
+        <strong className="text-foreground">n-gram language models</strong>{" "}
+        trained on Project Gutenberg data. Includes rich text editing,{" "}
+        <strong className="text-foreground">KaTeX</strong> math support, and
+        local file management.
+      </>
+    ),
     tags: ["Next.js", "TypeScript", "Quill.js", "N-gram", "KaTeX"],
     github: "https://github.com/rbessin/stride-editor",
     live: "https://stride-text-editor.vercel.app/",
@@ -24,8 +52,22 @@ const projects = [
   },
   {
     name: "CurbYourCarbon",
-    description:
-      "A browser extension that tracks the carbon footprint of your web browsing using real data from the Performance API. Calculates emissions from network transfer and device energy consumption using research-backed formulas and regional grid carbon intensity.",
+    description: (
+      <>
+        Won the{" "}
+        <strong className="text-foreground">
+          Social Impact & Sustainability
+        </strong>{" "}
+        category at <strong className="text-foreground">HackBeanpot</strong>,
+        built in <strong className="text-foreground">24 hours</strong>. A
+        browser extension that tracks the{" "}
+        <strong className="text-foreground">carbon footprint</strong> of your
+        web browsing using real data from the{" "}
+        <strong className="text-foreground">Performance API</strong>,
+        calculating emissions from network transfer and device energy using
+        research-backed formulas and regional grid carbon intensity.
+      </>
+    ),
     tags: [
       "Chrome Extension",
       "JavaScript",
@@ -39,9 +81,16 @@ const projects = [
   },
   {
     name: "The Ocean Scout",
-    description:
-      "A scouting platform for FIRST Tech Challenge robotics teams integrating The Blue Alliance API with collaborative features including user comments, an admin system, and group organization.",
-    tags: ["Next.js", "Firebase", "Tailwind", "The Blue Alliance API"],
+    description: (
+      <>
+        A <strong className="text-foreground">scouting platform</strong> for
+        FIRST Tech Challenge robotics teams integrating{" "}
+        <strong className="text-foreground">The Orange Alliance API</strong>{" "}
+        with collaborative features including user comments, an admin system,
+        and group organization.
+      </>
+    ),
+    tags: ["Next.js", "Firebase", "Tailwind", "The Orange Alliance API"],
     github: "https://github.com/SKY3E/The-Ocean-Scout",
     live: "https://the-ocean-scout.vercel.app/",
     status: "Completed",
@@ -51,7 +100,10 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-6 py-10 scroll-mt-16">
+    <section
+      id="projects"
+      className="max-w-6xl mx-auto px-6 py-10 scroll-mt-16"
+    >
       <h2 className="text-4xl font-bold text-accent mb-8">Projects</h2>
 
       <div className="grid grid-cols-2 gap-6">
@@ -69,7 +121,6 @@ export default function Projects() {
                 height={126}
                 className="w-full h-auto rounded-lg"
               />
-              {/* Tags below image */}
               <div className="flex flex-wrap gap-1.5 py-3 border-t border-border">
                 {project.tags.map((tag) => (
                   <span

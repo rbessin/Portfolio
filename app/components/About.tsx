@@ -11,8 +11,8 @@ export default function About() {
         <h1 className="text-4xl font-bold text-accent mb-6">About</h1>
         <div className="space-y-4 text-muted leading-relaxed">
           <p>
-            I&apos;m Raphael, a Computer Science student in the Honors College
-            at{" "}
+            I&apos;m Raphael, a Computer Science student in the{" "}
+            <strong className="text-foreground">Honors College</strong> at{" "}
             <a
               href="https://northeastern.edu"
               target="_blank"
@@ -26,18 +26,26 @@ export default function About() {
             to web applications used by real teams.
           </p>
           <p>
-            I&apos;m a dual US-French citizen, raised between Tokyo, London, New
-            York and the French education system, which gave me a deep
-            appreciation for both rigorous thinking and creative
-            problem-solving. Outside of code, I spend my time traveling, hiking,
-            running, playing chess, video games,and exploring through a camera
-            lens.
+            I&apos;m a{" "}
+            <strong className="text-foreground">dual US-French citizen</strong>,
+            raised between Tokyo, London, New York and the French education
+            system, which gave me a deep appreciation for both rigorous thinking
+            and creative problem-solving. Outside of code, I spend my time
+            traveling, hiking, running, playing chess, video games, and
+            exploring through a camera lens.
           </p>
           <p>
             I&apos;m currently building{" "}
-            <span className="text-foreground font-medium">Signal Relay</span>,
-            an interactive digital logic circuit simulator in Godot, and working
-            as a web developer for Northeastern Electric Racing.
+            <strong className="text-foreground">Signal Relay</strong>, an
+            interactive{" "}
+            <strong className="text-foreground">
+              digital logic circuit simulator
+            </strong>{" "}
+            in Godot, and working as a web developer for{" "}
+            <strong className="text-foreground">
+              Northeastern Electric Racing
+            </strong>
+            .
           </p>
         </div>
         <Links />

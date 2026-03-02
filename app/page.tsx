@@ -1,7 +1,7 @@
 import Navigation from "./components/Navigation";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Experiences from "./components/Experience";
+import Experiences from "./components/Experiences";
 import Skills from "./components/Skills";
 
 export default function Home() {
