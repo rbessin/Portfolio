@@ -27,7 +27,7 @@ const projects: {
     tags: ["Godot", "GDScript", "Digital Logic"],
     github: "https://github.com/rbessin/signal-relay",
     live: null,
-    status: "In Progress",
+    status: "Completed",
     image: "/projects/signal-relay.png",
   },
   {
@@ -76,7 +76,7 @@ const projects: {
     ],
     github: "https://github.com/rbessin/CurbYourCarbon",
     live: null,
-    status: "In Progress",
+    status: "Completed",
     image: "/projects/curb-your-carbon.png",
   },
   {
