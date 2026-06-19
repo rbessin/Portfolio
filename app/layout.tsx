@@ -15,9 +15,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://raphaelbessin.com"),
   title: "Raphaël Bessin - Software Engineer",
   description:
-    "Raphaël Bessin's personal website showcasing his projects and experience as a software engineer.",
+    "Computer Science student at Northeastern University Honors College building well-crafted, genuinely useful software.",
+  openGraph: {
+    title: "Raphaël Bessin - Software Engineer",
+    description:
+      "Computer Science student at Northeastern University Honors College building well-crafted, genuinely useful software.",
+    siteName: "Raphaël Bessin",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 300,
+        height: 300,
+        alt: "Raphaël Bessin",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Raphaël Bessin - Software Engineer",
+    description:
+      "Computer Science student at Northeastern University Honors College building well-crafted, genuinely useful software.",
+    images: ["/profile.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +51,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
           (function() {
             try {
               var theme = localStorage.getItem('theme');
@@ -38,7 +63,9 @@ export default function RootLayout({
               document.documentElement.setAttribute('data-theme', theme);
             } catch (e) {}
           })();
-        `}} />
+        `,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

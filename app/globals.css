@@ -15,32 +15,92 @@
 }
 
 :root {
-  --background: #F4F4F0;
-  --foreground: #1C1C1A;
-  --surface: #EAEAE5;
-  --surface-raised: #FFFFFF;
-  --border: #D4D4CC;
-  --muted: #8A8A82;
-  --accent: #3D6B4F;
-  --accent-hover: #2F5340;
-  --accent-subtle: #E8F0EB;
+  --background: #f4f4f0;
+  --foreground: #1c1c1a;
+  --surface: #eaeae5;
+  --surface-raised: #ffffff;
+  --border: #d4d4cc;
+  --muted: #8a8a82;
+  --accent: #3d6b4f;
+  --accent-hover: #2f5340;
+  --accent-subtle: #e8f0eb;
+  --dot-dim: rgba(28, 28, 26, 0.2);
+  --dot-bright: rgba(28, 28, 26, 0.9);
+  /* Updated by DotGrid.tsx on mousemove */
+  --mouse-x: -9999px;
+  --mouse-y: -9999px;
 }
 
 [data-theme="dark"] {
   --background: #141614;
-  --foreground: #E8E8E4;
-  --surface: #1E211E;
+  --foreground: #e8e8e4;
+  --surface: #1e211e;
   --surface-raised: #262926;
-  --border: #2E322E;
-  --muted: #6B6F6B;
-  --accent: #5A9E72;
-  --accent-hover: #6DB585;
-  --accent-subtle: #1C2B20;
+  --border: #2e322e;
+  --muted: #6b6f6b;
+  --accent: #5a9e72;
+  --accent-hover: #6db585;
+  --accent-subtle: #1c2b20;
+  --dot-dim: rgba(255, 255, 255, 0.2);
+  --dot-bright: rgba(255, 255, 255, 0.9);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.section-glass {
+  background-color: color-mix(in srgb, var(--background) 82%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dot-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.dot-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    var(--dot-dim) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+.dot-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    var(--dot-bright) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+  -webkit-mask-image: radial-gradient(
+    circle 300px at var(--mouse-x) var(--mouse-y),
+    black 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle 300px at var(--mouse-x) var(--mouse-y),
+    black 0%,
+    transparent 100%
+  );
 }

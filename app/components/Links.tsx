@@ -41,8 +41,7 @@ const showcaseLinks = [
 
 export default function Links() {
   return (
-    <div className="flex items-center gap-3 mt-8 w-full">
-      {/* Main links */}
+    <div className="flex flex-wrap items-center gap-3 mt-8 w-full">
       {links.map(({ label, href, icon: Icon }) => (
         <a
           key={label}
@@ -52,11 +51,10 @@ export default function Links() {
           className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-muted bg-surface border border-border hover:text-foreground hover:border-accent transition-colors duration-150"
         >
           <Icon className="w-4 h-4" />
-          {label}
+          <span className="hidden xs:inline sm:inline">{label}</span>
         </a>
       ))}
 
-      {/* Resume */}
       <a
         href="/resume.pdf"
         target="_blank"
@@ -67,18 +65,14 @@ export default function Links() {
         Resume
       </a>
 
-      {/* Divider */}
-      <div className="w-px h-6 bg-border flex-shrink-0" />
-
-      {/* Showcase icon-only links */}
       {showcaseLinks.map(({ label, href, logo }) => (
         <a
           key={label}
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          title={label}
-          className="w-9 h-9 flex items-center justify-center rounded-md text-muted bg-surface border border-border hover:text-foreground hover:border-accent transition-colors duration-150 flex-shrink-0"
+          aria-label={label}
+          className="flex items-center justify-center self-stretch px-4 rounded-md text-sm font-medium text-muted bg-surface border border-border hover:text-foreground hover:border-accent transition-colors duration-150"
         >
           {logo}
         </a>

@@ -5,49 +5,89 @@ const collegeExperiences = [
   {
     company: "FADEL",
     role: "Software Engineering Intern",
-    period: "Summer 2026",
+    period: "May 2026 — Jul 2026",
     bullets: [
       <>
-        Upcoming internship at an{" "}
-        <strong className="text-foreground">
-          IP licensing and royalty management
-        </strong>{" "}
-        software company
+        Built a <strong className="text-foreground">Spring Boot</strong> proxy
+        and API documentation platform covering{" "}
+        <strong className="text-foreground">9+ domains</strong> (auth, deals,
+        royalties, financials, SFTP) with dual{" "}
+        <strong className="text-foreground">JSON/XML</strong> format switching
+        and bearer token auth flows integrated directly in{" "}
+        <strong className="text-foreground">Swagger UI</strong>
+      </>,
+      <>
+        Built <strong className="text-foreground">Claude Code skills</strong>{" "}
+        for endpoint calling, bulk testing, and natural language DB querying —
+        surfaced SQL injection, silent errors, and type truncations across
+        upstream services, authoring{" "}
+        <strong className="text-foreground">10+ remediation proposals</strong>
+      </>,
+      <>
+        Implemented <strong className="text-foreground">10 new APIs</strong>{" "}
+        with authentication, pagination, sorting, and custom error handling
       </>,
     ],
     url: "https://fadel.com",
   },
   {
     company: "Northeastern Electric Racing",
-    role: "Web Developer",
-    period: "Fall 2025 — Present",
+    role: "Software Lead",
+    period: "Sep 2025 — Present",
     bullets: [
       <>
-        Developing Finishline, an internal web app with{" "}
-        <strong className="text-foreground">270+ active users</strong>,
-        supporting Formula SAE race car development and team operations
+        Architected a{" "}
+        <strong className="text-foreground">
+          canonical unit conversion system
+        </strong>{" "}
+        with global metric/imperial defaults and per-field overrides across{" "}
+        <strong className="text-foreground">20+ conversions</strong>; reduced
+        steering oscillation <strong className="text-foreground">80%</strong>{" "}
+        via a low-pass filter on Stanley controller output in NERSim
       </>,
       <>
-        Reducing memory usage by{" "}
-        <strong className="text-foreground">50%</strong> and hosting costs by{" "}
-        <strong className="text-foreground">30%</strong> by implementing{" "}
-        <strong className="text-foreground">pointer compression</strong> on
-        Node.js
+        Implemented global car filter on{" "}
+        <strong className="text-foreground">FinishLine</strong> (270+ users,
+        100,000+ LOC), replacing duplicated logic with a single reusable filter
+        component via middleware-backed filtering across{" "}
+        <strong className="text-foreground">20+ endpoints</strong>, after the
+        feature had stalled
       </>,
       <>
-        Built cross-project material copying and inline material creation across{" "}
-        <strong className="text-foreground">100+ materials and parts</strong>{" "}
-        using React, TypeScript, and Prisma
-      </>,
-      <>
-        Built an automated{" "}
-        <strong className="text-foreground">Docusaurus</strong> documentation
-        site processing SKILL.md files, serving{" "}
-        <strong className="text-foreground">30+ developers</strong> and reducing
-        onboarding friction
+        Proposed and built FinishLine&apos;s first developer documentation
+        system — a statically generated{" "}
+        <strong className="text-foreground">Docusaurus</strong> site
+        auto-generating Claude AI skills from docs to avoid maintaining two
+        separate sources of truth for{" "}
+        <strong className="text-foreground">30+ developers</strong>
       </>,
     ],
     url: "https://nurecing.com",
+  },
+  {
+    company: "NUSci Magazine",
+    role: "Web Developer",
+    period: "Fall 2025",
+    bullets: [
+      <>
+        Contributed full-stack features to a{" "}
+        <strong className="text-foreground">
+          Next.js / TypeScript / Express / MongoDB
+        </strong>{" "}
+        magazine platform replacement for a team of{" "}
+        <strong className="text-foreground">10 developers</strong>
+      </>,
+      <>
+        Refactored{" "}
+        <strong className="text-foreground">JWT authentication</strong> system
+        and resolved authorization middleware errors across the platform
+      </>,
+      <>
+        Built <strong className="text-foreground">Jest</strong> tests to ensure
+        platform reliability ahead of production launch
+      </>,
+    ],
+    url: "https://nusci.org",
   },
 ];
 
@@ -137,35 +177,66 @@ type Experience = {
 
 function ExperienceCard({ job }: { job: Experience }) {
   return (
-    <div className="flex gap-6 p-6 rounded-lg bg-surface border border-border hover:border-accent transition-colors duration-150">
-      <div className="flex-shrink-0 w-10 h-10 rounded-md bg-accent-subtle border border-border flex items-center justify-center">
-        <span className="text-accent text-sm font-bold">{job.company[0]}</span>
+    <div className="flex flex-col p-5 rounded-lg bg-surface border border-border hover:border-accent transition-colors duration-150">
+      <div className="flex items-start justify-between mb-1 gap-4">
+        <a
+          href={job.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-foreground font-semibold hover:text-accent transition-colors flex items-center gap-1.5"
+        >
+          {job.company}
+          <ExternalLink className="w-3 h-3 text-muted shrink-0" />
+        </a>
+        <span className="text-xs text-muted font-mono whitespace-nowrap">
+          {job.period}
+        </span>
       </div>
-      <div className="flex-1">
-        <div className="flex items-start justify-between mb-1">
-          <a
-            href={job.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground font-semibold hover:text-accent transition-colors flex items-center gap-1.5"
+      <p className="text-sm text-accent mb-3">{job.role}</p>
+      <ul className="space-y-1">
+        {job.bullets.map((bullet, i) => (
+          <li
+            key={i}
+            className="flex items-start gap-2 text-sm text-muted leading-relaxed"
           >
-            {job.company}
-            <ExternalLink className="w-3 h-3 text-muted" />
-          </a>
-          <span className="text-xs text-muted font-mono">{job.period}</span>
-        </div>
-        <p className="text-sm text-accent mb-3">{job.role}</p>
-        <ul>
-          {job.bullets.map((bullet, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-2 text-sm text-muted leading-relaxed"
-            >
-              <span className="text-accent mt-1.5 text-xs">▸</span>
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
+            <span className="text-accent mt-1.5 text-xs shrink-0">▸</span>
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function TimelineSection({
+  label,
+  experiences,
+}: {
+  label: string;
+  experiences: Experience[];
+}) {
+  return (
+    <div className="mb-2">
+      <div className="flex items-center gap-3 mb-5 pl-14">
+        <span className="text-xs font-mono uppercase tracking-widest text-muted">
+          {label}
+        </span>
+        <div className="flex-1 h-px bg-border" />
+      </div>
+
+      <div className="flex flex-col gap-4">
+        {experiences.map((job) => (
+          <div key={job.company} className="relative flex items-start gap-4">
+            <div className="shrink-0 w-10 h-10 rounded-full bg-surface-raised border border-border flex items-center justify-center z-10">
+              <span className="text-accent text-sm font-bold">
+                {job.company[0]}
+              </span>
+            </div>
+            <div className="flex-1">
+              <ExperienceCard job={job} />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -173,36 +244,25 @@ function ExperienceCard({ job }: { job: Experience }) {
 
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      className="max-w-6xl mx-auto px-6 py-10 scroll-mt-16"
-    >
-      <h2 className="text-4xl font-bold text-accent mb-8">Experience</h2>
+    <section id="experience" className="section-glass scroll-mt-16">
+      <div className="max-w-6xl mx-auto px-6 py-10">
+        <h2 className="text-4xl font-bold text-accent mb-8">Experience</h2>
 
-      {/* University */}
-      <div className="flex items-center gap-3 mb-4">
-        <span className="text-xs font-mono uppercase tracking-widest text-muted">
-          University
-        </span>
-        <div className="flex-1 h-px bg-border" />
-      </div>
-      <div className="flex flex-col gap-4 mb-8">
-        {collegeExperiences.map((job) => (
-          <ExperienceCard key={job.company} job={job} />
-        ))}
-      </div>
+        <div className="relative">
+          <div className="absolute left-4.75 top-0 bottom-0 w-px bg-border" />
 
-      {/* High School */}
-      <div className="flex items-center gap-3 mb-4">
-        <span className="text-xs font-mono uppercase tracking-widest text-muted">
-          High School
-        </span>
-        <div className="flex-1 h-px bg-border" />
-      </div>
-      <div className="flex flex-col gap-4">
-        {highSchoolExperiences.map((job) => (
-          <ExperienceCard key={job.company} job={job} />
-        ))}
+          <TimelineSection
+            label="University"
+            experiences={collegeExperiences}
+          />
+
+          <div className="mt-8">
+            <TimelineSection
+              label="High School"
+              experiences={highSchoolExperiences}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

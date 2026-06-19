@@ -9,6 +9,7 @@ const technicalSkills = [
       "JavaScript",
       "TypeScript",
       "Java",
+      "C#",
       "GDScript",
       "SQL",
       "HTML/CSS",
@@ -22,21 +23,32 @@ const technicalSkills = [
       "Next.js",
       "Node.js",
       "Express.js",
+      "Spring",
       "Django",
       "Prisma",
+      "NumPy",
+      "Dash",
       "Tailwind CSS",
-      "Chrome Extensions API",
     ],
   },
   {
     category: "Databases",
     icon: Database,
-    skills: ["PostgreSQL", "MongoDB", "Firebase"],
+    skills: ["PostgreSQL", "MongoDB", "Firebase", "Oracle DB"],
   },
   {
     category: "Tools & Platforms",
     icon: Wrench,
-    skills: ["Git", "Figma", "Godot", "Unity", "Vercel", "Docker"],
+    skills: [
+      "Claude Code",
+      "Git",
+      "Docker",
+      "Figma",
+      "Godot",
+      "Unity",
+      "Vercel",
+      "Swagger",
+    ],
   },
   {
     category: "Spoken Languages",
@@ -47,38 +59,43 @@ const technicalSkills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="max-w-6xl mx-auto px-6 py-10 scroll-mt-16">
-      <h2 className="text-4xl font-bold text-accent mb-8">Skills</h2>
+    <section id="skills" className="section-glass scroll-mt-16">
+      <div className="max-w-6xl mx-auto px-6 py-10">
+        <h2 className="text-4xl font-bold text-accent mb-8">Skills</h2>
 
-      <div className="rounded-lg bg-surface border border-border divide-y divide-border">
-        {technicalSkills.map(({ category, icon: Icon, skills }) => (
-          <div key={category} className="flex items-center gap-6 px-6 py-4">
-            {/* Category label + icon */}
-            <div className="flex items-center gap-2.5 w-52 flex-shrink-0">
-              <div className="w-7 h-7 rounded-md bg-accent-subtle flex items-center justify-center">
-                <Icon className="w-3.5 h-3.5 text-accent" />
+        <div className="rounded-lg bg-surface border border-border divide-y divide-border">
+          {technicalSkills.map(({ category, icon: Icon, skills }) => (
+            <div
+              key={category}
+              className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 px-6 py-4"
+            >
+              {/* Category label + icon */}
+              <div className="flex items-center gap-2.5 sm:w-52 sm:shrink-0">
+                <div className="w-7 h-7 rounded-md bg-accent-subtle flex items-center justify-center shrink-0">
+                  <Icon className="w-3.5 h-3.5 text-accent" />
+                </div>
+                <p className="text-xs font-mono text-muted uppercase tracking-wider">
+                  {category}
+                </p>
               </div>
-              <p className="text-xs font-mono text-muted uppercase tracking-wider">
-                {category}
-              </p>
-            </div>
 
-            {/* Divider */}
-            <div className="w-px h-6 bg-border flex-shrink-0" />
+              {/* Divider — hidden on mobile */}
+              <div className="hidden sm:block w-px h-6 bg-border shrink-0" />
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="text-xs px-2.5 py-1 rounded-md bg-background border border-border text-foreground font-mono hover:border-accent hover:text-accent transition-colors duration-150"
-                >
-                  {skill}
-                </span>
-              ))}
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="text-xs px-2.5 py-1 rounded-md bg-background border border-border text-foreground font-mono hover:border-accent hover:text-accent transition-colors duration-150"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
