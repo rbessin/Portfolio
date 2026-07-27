@@ -9,23 +9,32 @@ const collegeExperiences = [
     bullets: [
       <>
         Built a <strong className="text-foreground">Spring Boot</strong> proxy
-        and API documentation platform covering{" "}
-        <strong className="text-foreground">9+ domains</strong> (auth, deals,
-        royalties, financials, SFTP) with dual{" "}
-        <strong className="text-foreground">JSON/XML</strong> format switching
-        and bearer token auth flows integrated directly in{" "}
-        <strong className="text-foreground">Swagger UI</strong>
+        and API documentation platform spanning{" "}
+        <strong className="text-foreground">13 domains</strong> (auth, deals,
+        parties, royalties, financials, SKUs, SFTP) with dual{" "}
+        <strong className="text-foreground">JSON/XML</strong> support and
+        enterprise SSO (
+        <strong className="text-foreground">
+          Google, Microsoft, SAML/OKTA
+        </strong>
+        ) wired directly into <strong className="text-foreground">Swagger UI</strong>
       </>,
       <>
-        Built <strong className="text-foreground">Claude Code skills</strong>{" "}
-        for endpoint calling, bulk testing, and natural language DB querying —
-        surfaced SQL injection, silent errors, and type truncations across
-        upstream services, authoring{" "}
+        Discovered and patched a live{" "}
+        <strong className="text-foreground">SQL injection</strong>{" "}
+        vulnerability in a production endpoint; built{" "}
+        <strong className="text-foreground">Claude Code skills</strong> for
+        DB querying and bulk endpoint testing to surface silent errors and
+        type truncations, authoring{" "}
         <strong className="text-foreground">10+ remediation proposals</strong>
       </>,
       <>
-        Implemented <strong className="text-foreground">10 new APIs</strong>{" "}
-        with authentication, pagination, sorting, and custom error handling
+        Designed and shipped{" "}
+        <strong className="text-foreground">63 API endpoints</strong>,
+        including a Party resource with nested merge/orphan-removal logic and
+        an async Invoice Payment batch API with{" "}
+        <strong className="text-foreground">webhook callbacks</strong>{" "}
+        and retry backoff, migrating 27 endpoints into the production backend
       </>,
     ],
     url: "https://fadel.com",
