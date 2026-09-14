@@ -10,7 +10,7 @@ const education = [
     url: "https://northeastern.edu",
     highlights: [
       "GPA: 4.00 / 4.00 · Dean's List: Fall 2025, Spring 2026",
-      "Relevant Coursework: Object-Oriented Design, Algorithms & Data Structures, Discrete Structures",
+      "Relevant Coursework: Object-Oriented Design, Algorithms & Data Structures, Discrete Structures, Mathematical Foundations of AI, Computer Systems",
     ],
     initial: "N",
   },

@@ -50,13 +50,20 @@ export default function About() {
               and exploring through a camera lens.
             </p>
             <p>
-              I recently finished building{" "}
+              Some of my recent projects include{" "}
               <strong className="text-foreground">Signal Relay</strong>, an
               interactive{" "}
               <strong className="text-foreground">
                 digital logic circuit simulator
               </strong>{" "}
-              in Godot, and took on two new roles as a Software Lead for{" "}
+              in Godot, and{" "}
+              <strong className="text-foreground">
+                CurbYourCarbon
+              </strong>, a{" "}
+              <strong className="text-foreground">
+                hackathon winning project
+              </strong>.
+              I also recently took on two new roles as a Software Lead, for the Simulation team, in{" "}
               <strong className="text-foreground">
                 Northeastern Electric Racing
               </strong>{" "}

@@ -9,32 +9,32 @@ const collegeExperiences = [
     bullets: [
       <>
         Built a <strong className="text-foreground">Spring Boot</strong> proxy
-        and API documentation platform spanning{" "}
-        <strong className="text-foreground">13 domains</strong> (auth, deals,
-        parties, royalties, financials, SKUs, SFTP) with dual{" "}
-        <strong className="text-foreground">JSON/XML</strong> support and
-        enterprise SSO (
+        and API documentation platform, spanning{" "}
+        <strong className="text-foreground">13 domains</strong> with dual{" "}
+        <strong className="text-foreground">JSON/XML</strong> format
+        switching and enterprise SSO (
         <strong className="text-foreground">
           Google, Microsoft, SAML/OKTA
         </strong>
-        ) wired directly into <strong className="text-foreground">Swagger UI</strong>
+        ) integrated directly in{" "}
+        <strong className="text-foreground">Swagger UI</strong>
       </>,
       <>
         Discovered and patched a live{" "}
         <strong className="text-foreground">SQL injection</strong>{" "}
-        vulnerability in a production endpoint; built{" "}
+        vulnerability; built{" "}
         <strong className="text-foreground">Claude Code skills</strong> for
-        DB querying and bulk endpoint testing to surface silent errors and
-        type truncations, authoring{" "}
+        DB querying and bulk testing to surface silent errors and type
+        truncations across upstream services, authoring{" "}
         <strong className="text-foreground">10+ remediation proposals</strong>
       </>,
       <>
         Designed and shipped{" "}
         <strong className="text-foreground">63 API endpoints</strong>,
-        including a Party resource with nested merge/orphan-removal logic and
-        an async Invoice Payment batch API with{" "}
-        <strong className="text-foreground">webhook callbacks</strong>{" "}
-        and retry backoff, migrating 27 endpoints into the production backend
+        including a Party resource with nested merge logic and an async
+        Invoice Payment batch API with{" "}
+        <strong className="text-foreground">webhook callbacks</strong> and
+        retry backoff; integrated 20+ into FADEL&apos;s production backend
       </>,
     ],
     url: "https://fadel.com",
@@ -45,26 +45,42 @@ const collegeExperiences = [
     period: "Sep 2025 — Present",
     bullets: [
       <>
-        Architected a{" "}
-        <strong className="text-foreground">
-          canonical unit conversion system
-        </strong>{" "}
-        with global metric/imperial defaults and per-field overrides across{" "}
-        <strong className="text-foreground">20+ conversions</strong>; reduced
-        steering oscillation <strong className="text-foreground">80%</strong>{" "}
-        via a low-pass filter on Stanley controller output in NERSim
+        Migrated NERSim&apos;s Dash from{" "}
+        <strong className="text-foreground">v3.4 to v4.4</strong>, replacing
+        polling with <strong className="text-foreground">WebSockets</strong>{" "}
+        to cut flickering by <strong className="text-foreground">80%+</strong>
+        ; led a full UI/UX overhaul including a reusable{" "}
+        <strong className="text-foreground">React</strong> graph selector with
+        local storage persistence and graph presets
       </>,
       <>
-        Implemented global car filter on{" "}
-        <strong className="text-foreground">FinishLine</strong> (270+ users,
-        100,000+ LOC), replacing duplicated logic with a single reusable filter
-        component via middleware-backed filtering across{" "}
+        Engineered a{" "}
+        <strong className="text-foreground">
+          CI/CD data-validation pipeline
+        </strong>{" "}
+        (self-hosted GitHub Actions runner, automated schema verification
+        against production snapshots) with fail-safe deploy-time
+        reserialization and error handling
+      </>,
+      <>
+        Implemented global car filtering on{" "}
+        <strong className="text-foreground">FinishLine</strong> (200+ users,
+        100,000+ LOC), replacing duplicated logic with a single reusable
+        middleware-backed component across{" "}
         <strong className="text-foreground">20+ endpoints</strong>, after the
         feature had stalled
       </>,
       <>
+        Architected a{" "}
+        <strong className="text-foreground">
+          canonical-unit conversion system
+        </strong>{" "}
+        with global metric/imperial defaults across{" "}
+        <strong className="text-foreground">20+ conversions</strong>
+      </>,
+      <>
         Proposed and built FinishLine&apos;s first developer documentation
-        system — a statically generated{" "}
+        system, a statically generated{" "}
         <strong className="text-foreground">Docusaurus</strong> site
         auto-generating Claude AI skills from docs to avoid maintaining two
         separate sources of truth for{" "}

@@ -53,7 +53,7 @@ const technicalSkills = [
   {
     category: "Spoken Languages",
     icon: Languages,
-    skills: ["French (native)", "English (native)", "German (proficient)"],
+    skills: ["French (native)", "English (native)", "German (intermediate)"],
   },
 ];
 
