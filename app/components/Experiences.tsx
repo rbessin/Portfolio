@@ -64,8 +64,8 @@ const collegeExperiences = [
       </>,
       <>
         Implemented global car filtering on{" "}
-        <strong className="text-foreground">FinishLine</strong> (200+ users,
-        100,000+ LOC), replacing duplicated logic with a single reusable
+        <strong className="text-foreground">FinishLine</strong> (200+ users),
+        replacing duplicated logic with a single reusable
         middleware-backed component across{" "}
         <strong className="text-foreground">20+ endpoints</strong>, after the
         feature had stalled
