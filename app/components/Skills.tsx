@@ -25,16 +25,16 @@ const technicalSkills = [
       "Express.js",
       "Spring",
       "Django",
-      "Prisma",
       "NumPy",
       "Dash",
       "Tailwind CSS",
+      "Vite",
     ],
   },
   {
     category: "Databases",
     icon: Database,
-    skills: ["PostgreSQL", "MongoDB", "Firebase", "Oracle DB"],
+    skills: ["PostgreSQL", "MongoDB", "Firebase", "Oracle DB", "Prisma", "SQL", "SQLAlchemy"],
   },
   {
     category: "Tools & Platforms",
